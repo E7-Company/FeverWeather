@@ -8,7 +8,7 @@ To implement this layer I'm using Retrofit and Room libraries to get the data fr
 #### Get data from API (Retrofit)
 The method 'getCurrentWeather' from 'WeatherAPI' get the response from the endpoint:
 
-https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={APIkey}
 
 For this call I added the 'units' parameter to change the units of measurement for the data.
 The response is serialized by GSon and in the 'NetworkDataSource' map to transform in a simple class ('Weather') to use in database and in the view.
@@ -72,9 +72,21 @@ It is saved in SharedPreferences because it's only a string.
 #### Fragment
 The 'WeatherFragment' handle the States and Events, and changes the UI data.
 All the data changes are implemented in the fragment to show the data, for example the loading component or the data content for the weather.
-For the weather icons I'm using a special font, I think is faster and lighter than images. A lot of functionality is at the 'Extension' file to do more reusable and easy to change at the future.
+For the weather icons I'm using a special font (based in https://erikflowers.github.io/weather-icons/), I think is faster and lighter than images. A lot of functionality is at the 'Extension' file to do more reusable and easy to change at the future.
 
 #### Design
 I tried to do the design very clean and clear, only selecting the most important weather data to show (saved in the 'Weather' object) and with only a button at the bottom to refresh. And at the top right exist and option menu to select the 'unit'.
 
-![alt text](https://github.com/E7-Company/FeverWeather/blob/main/Screenshot_20210809_205858.png?raw=true)
+![alt text](https://github.com/E7-Company/FeverWeather/blob/main/Screenshot_20210809_205858.png?raw=true | width=400)
+
+### IMPROVE
+With more time, I was thinking to put Geolocation to get the coordinates from the GPS of the device, or show a finder to select the city by name.
+With this endpoint from AOL you can get a list of city names with the coordinates:
+
+https://www.aol.com/api/v4/weather/location?query={city}
+
+For example I have an app at the store, very similar to this, with the select city by name feature:
+
+https://play.google.com/store/apps/details?id=com.e7.easyweather
+
+
