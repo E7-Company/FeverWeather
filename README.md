@@ -77,7 +77,7 @@ For the weather icons I'm using a special font (based in https://erikflowers.git
 #### Design
 I tried to do the design very clean and clear, only selecting the most important weather data to show (saved in the 'Weather' object) and with only a button at the bottom to refresh. And at the top right exist and option menu to select the 'unit'.
 
-![alt text](https://github.com/E7-Company/FeverWeather/blob/main/Screenshot_20210809_205858.png?raw=true | width=400)
+![alt text](https://github.com/E7-Company/FeverWeather/blob/main/Screenshot_20210809_205858.png?raw=true&s=400)
 
 ### IMPROVE
 With more time, I was thinking to put Geolocation to get the coordinates from the GPS of the device, or show a finder to select the city by name.
