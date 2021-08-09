@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.fever.weather.ui.MainActivity">
+    <item
+        android:id="@+id/set_standard"
+        android:orderInCategory="100"
+        android:title="@string/standard"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/set_metric"
+        android:orderInCategory="100"
+        android:title="@string/metric"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/set_imperial"
+        android:orderInCategory="100"
+        android:title="@string/imperial"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.2">
+
+        <TextView
+            android:id="@+id/tvIconHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:layout_marginEnd="5dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/humidity" />
+        <TextView
+            android:id="@+id/tvHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:text="-- %"
+            android:textColor="@android:color/white"
+            android:gravity="start|center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.3">
+        <TextView
+            android:id="@+id/tvIconPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:layout_marginEnd="5dp"
+            android:gravity="end|center"
+            android:textColor="@android:color/white"
+            android:text="@string/pressure" />
+        <TextView
+            android:id="@+id/tvPressure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:text="-- hPa"
+            android:textColor="@android:color/white"
+            android:gravity="start|center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="0.4">
+        <TextView
+            android:id="@+id/tvIconWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:layout_marginEnd="5dp"
+            android:gravity="end|center"
+            android:textColor="@android:color/white"
+            android:text="@string/wind" />
+        <TextView
+            android:id="@+id/tvWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/data_text_size"
+            android:text="-- mps"
+            android:textColor="@android:color/white"
+            android:gravity="start|center" />
+    </LinearLayout>
+
+</LinearLayout>
