@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Fever Weather</string>
+
+    <string name="not_available">&#xf07b;</string>
+
+    <string name="humidity">&#xf07a;</string>
+    <string name="pressure">&#xf079;</string>
+    <string name="wind">&#xf050;</string>
+
+    <string name="refresh">REFRESH</string>
+    <string name="error">ERROR</string>
+
+    <string name="geolocation">Geolocation</string>
+    <string name="allow">Allow</string>
+    <string name="cancel">Cancel</string>
+    <string name="geolocation_permission">You need to accept geolocation permission to get your weather</string>
+    <string name="weather_error">Error to get your weather</string>
+
+    <string name="standard">Standard</string>
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
+
+    <string name="weather_tornado">&#xf056;</string>
+    <string name="weather_day_storm_showers">&#xf00e;</string>
+    <string name="weather_hurricane">&#xf073;</string>
+    <string name="weather_thunderstorm">&#xf01e;</string>
+    <string name="weather_rain_mix">&#xf017;</string>
+    <string name="weather_rain">&#xf019;</string>
+    <string name="weather_hail">&#xf015;</string>
+    <string name="weather_showers">&#xf01a;</string>
+    <string name="weather_snow">&#xf01b;</string>
+    <string name="weather_day_snow">&#xf00a;</string>
+    <string name="weather_snow_wind">&#xf064;</string>
+    <string name="weather_dust">&#xf063;</string>
+    <string name="weather_fog">&#xf014;</string>
+    <string name="weather_windy">&#xf021;</string>
+    <string name="weather_smoke">&#xf062;</string>
+    <string name="weather_strong_wind">&#xf050;</string>
+    <string name="weather_snowflake_cold">&#xf076;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_night_cloudy">&#xf031;</string>
+    <string name="weather_day_cloudy">&#xf002;</string>
+    <string name="weather_night_clear">&#xf02e;</string>
+    <string name="weather_day_sunny">&#xf00d;</string>
+    <string name="weather_night_partly_cloudy">&#xf083;</string>
+    <string name="weather_day_sunny_overcast">&#xf00c;</string>
+    <string name="weather_hot">&#xf072;</string>
+    <string name="weather_day_high_cloudy">&#xf07d;</string>
+    <string name="weather_night_high_cloudy">&#xf07e;</string>
+
+</resources>
