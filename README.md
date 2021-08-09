@@ -7,6 +7,7 @@ To implement this layer I'm using Retrofit and Room libraries to get the data fr
 
 #### Get data from API (Retrofit)
 The method 'getCurrentWeather' from 'WeatherAPI' get the response from the endpoint:
+
 https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
 For this call I added the 'units' parameter to change the units of measurement for the data.
@@ -31,8 +32,11 @@ For everytime the app call to the API, the correct response is saved in database
 
 #### Models
 Exist a data class for any data from the response of get current weather API call.
+
 There are:
+
 CurrentWeather - Main - Sys - Clouds - Coord - WeatherItem - Wind
+
 Being 'CurrentWeather' the main data class.
 
 ### DI
@@ -52,7 +56,9 @@ At this ViewModel is implemented the private function to create the parameters t
 
 #### States
 At the sealed class 'WeatherViewState' is implemented the 2 States.
+
 · Loading -> To show the loading view and hide the data from the UI.
+
 · Loaded  -> With the weather data mapped from Network or get in the database.
 
 ### View
@@ -71,4 +77,4 @@ For the weather icons I'm using a special font, I think is faster and lighter th
 #### Design
 I tried to do the design very clean and clear, only selecting the most important weather data to show (saved in the 'Weather' object) and with only a button at the bottom to refresh. And at the top right exist and option menu to select the 'unit'.
 
-
+![alt text](https://github.com/E7-Company/FeverWeather/blob/master/Screenshot_20210809_205858.png?raw=true)
