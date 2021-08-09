@@ -77,4 +77,4 @@ For the weather icons I'm using a special font, I think is faster and lighter th
 #### Design
 I tried to do the design very clean and clear, only selecting the most important weather data to show (saved in the 'Weather' object) and with only a button at the bottom to refresh. And at the top right exist and option menu to select the 'unit'.
 
-![alt text](https://github.com/E7-Company/FeverWeather/blob/master/Screenshot_20210809_205858.png?raw=true)
+![alt text](https://github.com/E7-Company/FeverWeather/blob/main/Screenshot_20210809_205858.png?raw=true)
