@@ -30,7 +30,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideCache(): Cache =
-        Cache(Environment.getDownloadCacheDirectory(), 10 * 1024 * 1024)
+        Cache(Environment.getDownloadCacheDirectory(), (10 * 1024 * 1024))
 
     @Provides
     @Singleton

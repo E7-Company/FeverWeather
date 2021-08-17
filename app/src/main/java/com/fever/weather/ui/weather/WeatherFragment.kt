@@ -83,7 +83,7 @@ class WeatherFragment : BaseViewModelFragment<
             it.tvIconWeather.text = weather.icon?.toWeatherIcon(requireContext())
             it.viewTemp.tvTemp.text = "${weather.temp}\u00B0"
             it.viewTemp.tvTempMin.text = "/${weather.tempMin}\u00B0"
-            it.tvClimate.text = weather.main?.toUpperCase()
+            it.tvClimate.text = weather.main?.uppercase()
             it.tvDescription.text = weather.description?.capitalize()
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
