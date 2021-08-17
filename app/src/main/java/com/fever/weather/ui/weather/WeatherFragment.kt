@@ -1,5 +1,6 @@
 package com.fever.weather.ui.weather
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.fever.weather.utils.toast
 import com.fever.weather.utils.toDay
 import com.fever.weather.utils.getUnits
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Locale
 
 @AndroidEntryPoint
 class WeatherFragment : BaseViewModelFragment<
@@ -73,6 +75,7 @@ class WeatherFragment : BaseViewModelFragment<
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showWeather(weather: Weather) {
         binding.let {
             it.tvCountry.text = if (weather.city.isNullOrEmpty())
@@ -84,7 +87,11 @@ class WeatherFragment : BaseViewModelFragment<
             it.viewTemp.tvTemp.text = "${weather.temp}\u00B0"
             it.viewTemp.tvTempMin.text = "/${weather.tempMin}\u00B0"
             it.tvClimate.text = weather.main?.uppercase()
-            it.tvDescription.text = weather.description?.capitalize()
+            it.tvDescription.text = weather.description?.replaceFirstChar { char ->
+                if (char.isLowerCase()) char.titlecase(
+                    Locale.getDefault()
+                ) else char.toString()
+            }
 
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 it.tvDay.text = weather.timezone.toString().toDay()

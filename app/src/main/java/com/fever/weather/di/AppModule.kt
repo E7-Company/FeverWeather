@@ -27,13 +27,13 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideCache(): Cache =
         Cache(Environment.getDownloadCacheDirectory(), (10 * 1024 * 1024))
 
-    @Provides
     @Singleton
+    @Provides
     fun provideOkHttpClientBuilder(): OkHttpClient.Builder =
         OkHttpClient.Builder()
             .addInterceptor(DefaultRequestInterceptor())
@@ -52,9 +52,11 @@ object AppModule {
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
+    @Singleton
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
 
+    @Singleton
     @Provides
     fun provideWeatherService(retrofit: Retrofit): WeatherAPI = retrofit.create(WeatherAPI::class.java)
 

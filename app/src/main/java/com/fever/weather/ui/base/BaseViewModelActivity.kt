@@ -16,7 +16,7 @@ abstract class BaseViewModelActivity<
     : AppCompatActivity() {
 
     abstract val viewBinding: (LayoutInflater) -> BINDING
-    protected lateinit var binding: BINDING
+    private lateinit var binding: BINDING
 
     protected abstract val viewModel: VIEW_MODEL
 
