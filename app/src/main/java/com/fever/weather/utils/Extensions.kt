@@ -1,10 +1,15 @@
 package com.fever.weather.utils
 
+import android.Manifest
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
+import androidx.core.location.LocationManagerCompat
 import com.fever.weather.R
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
@@ -49,3 +54,12 @@ fun SharedPreferences.getUnits(): String {
     return getString(Constants.Units.UNITS, Constants.Units.Unit.STANDARD.value) ?:
         Constants.Units.Unit.STANDARD.value
 }
+
+fun Context.isLocationEnabled(): Boolean {
+    val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+    return LocationManagerCompat.isLocationEnabled(locationManager)
+}
+
+fun Context.isAccessFineLocationEnabled(): Boolean =
+    ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED

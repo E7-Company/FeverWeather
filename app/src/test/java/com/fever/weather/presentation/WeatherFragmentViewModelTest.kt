@@ -53,7 +53,7 @@ class WeatherFragmentViewModelTest {
 
         testCoroutineScope.runBlockingTest {
             val viewModel = buildViewModel()
-            viewModel.getWeather(Constants.Units.Unit.IMPERIAL.value, true)
+            viewModel.getWeather(Constants.Units.Unit.IMPERIAL.value, true, null, null)
 
             Assert.assertEquals(mockWeather, (viewModel.viewState.value as WeatherViewState.Loaded).weather)
         }
@@ -66,7 +66,7 @@ class WeatherFragmentViewModelTest {
 
         testCoroutineScope.runBlockingTest {
             val viewModel = buildViewModel()
-            viewModel.getWeather(Constants.Units.Unit.IMPERIAL.value, true)
+            viewModel.getWeather(Constants.Units.Unit.IMPERIAL.value, true, null, null)
 
             val viewEvent = viewModel.viewEvents.poll()
             assertTrue(viewEvent is WeatherFragmentViewModel.WeatherViewEvent.OnShowError)

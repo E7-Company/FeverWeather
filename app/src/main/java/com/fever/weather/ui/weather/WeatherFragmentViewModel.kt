@@ -15,11 +15,11 @@ class WeatherFragmentViewModel @Inject constructor(
 
     override suspend fun getInitialViewState(): WeatherViewState = WeatherViewState.Loading
 
-    fun getWeather(units: String, forceRefresh: Boolean) {
+    fun getWeather(units: String, forceRefresh: Boolean, lat: Double?, lon: Double?) {
         updateViewState { WeatherViewState.Loading }
 
         viewModelScope.launch {
-            repository.getCurrentWeather(createParams(units, forceRefresh))
+            repository.getCurrentWeather(createParams(units, forceRefresh, lat, lon))
                 .handleError {
                     sendViewEvent(WeatherViewEvent.OnShowError)
                     null
@@ -34,10 +34,10 @@ class WeatherFragmentViewModel @Inject constructor(
         }
     }
 
-    private fun createParams(units: String, forceRefresh: Boolean): WeatherRepository.WeatherParams {
+    private fun createParams(units: String, forceRefresh: Boolean, lat: Double?, lon: Double?): WeatherRepository.WeatherParams {
         return WeatherRepository.WeatherParams(
-            lat = getRandomLatitude(),
-            lon = getRandomLongitude(),
+            lat = lat ?: getRandomLatitude(),
+            lon = lon ?: getRandomLongitude(),
             forceRefresh = forceRefresh,
             units = units
         )
