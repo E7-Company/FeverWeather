@@ -6,7 +6,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class DefaultRequestInterceptor @Inject constructor() : Interceptor {
+class DefaultRequestInterceptor: Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val url = chain.request().url

@@ -21,18 +21,15 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Singleton
     @Provides
     fun provideCache(): Cache =
         Cache(Environment.getDownloadCacheDirectory(), (10 * 1024 * 1024))
 
-    @Singleton
     @Provides
     fun provideOkHttpClientBuilder(): OkHttpClient.Builder =
         OkHttpClient.Builder()
@@ -40,7 +37,6 @@ object AppModule {
             .readTimeout(1, TimeUnit.MINUTES)
             .writeTimeout(1, TimeUnit.MINUTES)
 
-    @Singleton
     @Provides
     fun provideRetrofit(
         okHttpClientBuilder: OkHttpClient.Builder,
@@ -52,27 +48,21 @@ object AppModule {
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
-    @Singleton
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
 
-    @Singleton
     @Provides
     fun provideWeatherService(retrofit: Retrofit): WeatherAPI = retrofit.create(WeatherAPI::class.java)
 
-    @Singleton
     @Provides
     fun provideWeatherRemoteDataSource(weatherService: WeatherAPI) = NetworkDataSource(weatherService)
 
-    @Singleton
     @Provides
     fun provideDatabase(@ApplicationContext appContext: Context) = AppDatabase.getDatabase(appContext)
 
-    @Singleton
     @Provides
     fun provideWeatherDao(db: AppDatabase) = db.weatherDao()
 
-    @Singleton
     @Provides
     fun provideRepository(remoteDataSource: NetworkDataSource,
                           localDataSource: WeatherDao) =

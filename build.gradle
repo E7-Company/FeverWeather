@@ -8,6 +8,7 @@ buildscript {
         okhttpVersion = '4.9.1'
         roomVersion = '2.3.0'
         arrowVersion = '0.13.2'
+        navigation = '2.3.5'
     }
     repositories {
         google()
